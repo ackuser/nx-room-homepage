@@ -1,0 +1,8 @@
+// Layout System in Small Devices
+$total-width-sm: 375px;
+$number-of-columns: 12;
+$layout-column-width: 24px;
+$layout-gutter-width: 7px;
+$total-width-sm-no-gutter-outside: calc(#{$number-of-columns} * (#{$layout-column-width} + #{$layout-gutter-width}));
+$gutter-outside: calc($total-width-sm - $total-width-sm-no-gutter-outside);
+$each-gutter-outside: calc($each-gutter-outside/2);

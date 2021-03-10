@@ -1,1 +1,21 @@
 @import '_colors';
+
+@mixin title($size: 28px) {
+    font-size: $size;
+    color: $black;
+    font-weight: bold;
+    text-align: left;
+}
+
+@mixin subtitle($size: 12px) {
+    font-size: $size;
+    color: $black;
+    font-weight: bold;
+    text-align: left;
+}
+
+@mixin info {
+    color: $gray-dark;
+    font-weight: normal;
+    text-align: left;
+}
