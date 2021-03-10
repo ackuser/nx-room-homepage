@@ -21,6 +21,9 @@
               "apps/room-homepage/src/assets"
             ],
             "styles": ["apps/room-homepage/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": [ "src/assets/styles"]
+            },
             "scripts": []
           },
           "configurations": {

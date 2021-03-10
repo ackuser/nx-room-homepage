@@ -1,0 +1,16 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@mixin fadeIn($delay: 0) {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: #{$delay}s;
+    animation-fill-mode: forwards;
+}
