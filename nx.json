@@ -20,6 +20,7 @@
     "room-homepage-e2e": {
       "tags": [],
       "implicitDependencies": ["room-homepage"]
-    }
+    },
+    "types": { "tags": [] }
   }
 }

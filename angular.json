@@ -22,7 +22,7 @@
             ],
             "styles": ["apps/room-homepage/src/styles.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [ "src/assets/styles"]
+              "includePaths": ["src/assets/styles"]
             },
             "scripts": []
           },
@@ -114,6 +114,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/room-homepage-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "types": {
+      "root": "libs/types",
+      "sourceRoot": "libs/types/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/types/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types"],
+          "options": {
+            "jestConfig": "libs/types/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
