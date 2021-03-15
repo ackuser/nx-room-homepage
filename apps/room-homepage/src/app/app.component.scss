@@ -1,22 +1,36 @@
 @import '_colors';
 @import '_grid';
+@import '_layout';
 @import '_fonts';
 
+// $grid-second-row: ((5 * $grid-block-sm) + (1 * $grid-cell-sm));
+$grid-second-row: (266px + ($grid-block-sm * 2));
+$grid-fourth-row: (5 * $grid-block-sm);
+@debug $grid-second-row;
+@debug $grid-fourth-row;
+
 :host {
+  position: relative;
   height: 100%;
   display: grid;
   // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   // grid-template-rows: repeat(10, $grid-block-sm);
-  grid-template-rows: 360px calc((5 * #{$grid-block-sm}) + 1 * #{$grid-cell-sm}) 238px calc(5 * #{$grid-block-sm}) 227px;
+  grid-template-areas: 'area-1''area-2''area-3''area-4''area-5';
+  // grid-template-rows: 360px $grid-second-row 238px $grid-fourth-row 227px;
 }
 
 .block {
+  margin: $grid-block-sm ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
 
-  &--1 {
+  &--1 {
+    width: 311px;
+    height: 266px;
     grid-area: area-2;
   }
 
-  &--2 {
+  &--2 {
+    width: 311px;
+    height: 198px;
     grid-area: area-4;
   }
 
@@ -24,17 +38,45 @@
 
 .img {
 
-  &--1 {
+  &--logo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: $grid-cell-sm * 1.5;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--burguer {
+    position: absolute;
+    margin-top: $grid-cell-sm * 1.5;
+    margin-left: $grid-cell-sm * .9;
+    width: auto;
+    height: auto;
+  }
+
+  &--1 {
+    height: 360px;
     grid-area: area-1;
   }
 
-  &--2 {
+  &--2 {
+    height: 238px;
     grid-area: area-3;
   }
 
-  &--3 {
+  &--3 {
+    height: 227px;
     grid-area: area-5;
   }
+
+  // &--arrow{
+  //   transition: 1s ease-in-out;
+
+  //   &:hover {
+  //     transform: translate(20px,0);
+  //   }
+  // }
 }
 
 .title {
@@ -43,8 +85,29 @@
 
 .subtitle {
   @include subtitle;
+  letter-spacing: 5px;
 }
 
 .info {
   @include info;
+  letter-spacing: -0.25px;
+
+  &--1 {
+    margin-bottom: 0;
+  }
+}
+
+.cta {
+  letter-spacing: 10px;
+  margin-top: 2 * $grid-cell-sm;
+  cursor: pointer;
+  
+  &:hover {
+      animation: moving 1s ease-in-out 4 alternate;
+    }
+}
+
+@keyframes moving {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(30px); }
 }

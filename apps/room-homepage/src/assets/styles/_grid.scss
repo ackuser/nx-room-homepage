@@ -1,3 +1,5 @@
-// Layout System in Small Devices
+// Grid System in Small Devices
 $grid-cell-sm: 25px;
-$grid-block-sm: calc(3 * #{$grid-cell-sm});
+$grid-block-sm: 3 * $grid-cell-sm;
+@debug $grid-cell-sm;
+@debug $grid-block-sm;
