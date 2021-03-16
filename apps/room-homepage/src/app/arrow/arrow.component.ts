@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'room-homepage-arrow',
@@ -9,4 +9,11 @@ export class ArrowComponent {
 
   @Input() type: 'left' | 'rigth';
 
+  @Output() OnClickEvent = new EventEmitter<string>();
+  
+  @HostListener('click', ['$event.target'])
+  onClick() {
+    this.OnClickEvent.emit(this.type);
+  }
 }
+

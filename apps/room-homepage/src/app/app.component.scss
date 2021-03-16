@@ -140,3 +140,8 @@ $grid-fourth-row: (5 * $grid-block-sm);
     transform: translateX(30px);
   }
 }
+
+.half-opacity{
+  background: $black-half-opacity;
+  opacity: .45;
+}
