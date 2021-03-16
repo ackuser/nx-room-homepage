@@ -10,7 +10,6 @@ $grid-fourth-row: (5 * $grid-block-sm);
 @debug $grid-fourth-row;
 
 :host {
-  position: relative;
   height: 100%;
   display: grid;
   // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -20,25 +19,51 @@ $grid-fourth-row: (5 * $grid-block-sm);
 }
 
 .block {
-  margin: $grid-block-sm ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
 
   &--1 {
-    width: 311px;
-    height: 266px;
-    grid-area: area-2;
+    position: relative;
+    height: 360px;
+    grid-area: area-1;
+    margin: 0;
   }
 
   &--2 {
     width: 311px;
+    height: 266px;
+    grid-area: area-2;
+    margin: $grid-block-sm ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
+  }
+
+  &--3 {
+    width: 311px;
     height: 198px;
     grid-area: area-4;
+    margin: $grid-block-sm ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
   }
+
+  &--arrows {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+      
+      .arrow {
+        width: 56px;
+        height: 56px;
+        cursor: pointer;
+
+        &--left {}
+
+        &--right {}
+
+      }
+    }
 
 }
 
 .img {
 
-  &--logo{
+  &--logo {
     position: absolute;
     left: 0;
     right: 0;
@@ -57,7 +82,6 @@ $grid-fourth-row: (5 * $grid-block-sm);
 
   &--1 {
     height: 360px;
-    grid-area: area-1;
   }
 
   &--2 {
@@ -101,13 +125,18 @@ $grid-fourth-row: (5 * $grid-block-sm);
   letter-spacing: 10px;
   margin-top: 2 * $grid-cell-sm;
   cursor: pointer;
-  
+
   &:hover {
-      animation: moving 1s ease-in-out 4 alternate;
-    }
+    animation: moving 1s ease-in-out 4 alternate;
+  }
 }
 
 @keyframes moving {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(30px); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(30px);
+  }
 }

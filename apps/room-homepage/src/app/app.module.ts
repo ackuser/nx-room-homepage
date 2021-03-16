@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { ArrowComponent } from './arrow/arrow.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ArrowComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
