@@ -3,7 +3,6 @@
 @import '_layout';
 @import '_fonts';
 
-// $grid-second-row: ((5 * $grid-block-sm) + (1 * $grid-cell-sm));
 $grid-second-row: (266px + ($grid-block-sm * 2));
 $grid-fourth-row: (5 * $grid-block-sm);
 @debug $grid-second-row;
@@ -12,10 +11,7 @@ $grid-fourth-row: (5 * $grid-block-sm);
 :host {
   height: 100%;
   display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  // grid-template-rows: repeat(10, $grid-block-sm);
   grid-template-areas: 'area-1''area-2''area-3''area-4''area-5';
-  // grid-template-rows: 360px $grid-second-row 238px $grid-fourth-row 227px;
 }
 
 .block {
@@ -51,11 +47,6 @@ $grid-fourth-row: (5 * $grid-block-sm);
         width: 56px;
         height: 56px;
         cursor: pointer;
-
-        &--left {}
-
-        &--right {}
-
       }
     }
 
@@ -93,14 +84,6 @@ $grid-fourth-row: (5 * $grid-block-sm);
     height: 227px;
     grid-area: area-5;
   }
-
-  // &--arrow{
-  //   transition: 1s ease-in-out;
-
-  //   &:hover {
-  //     transform: translate(20px,0);
-  //   }
-  // }
 }
 
 .title {
@@ -142,6 +125,10 @@ $grid-fourth-row: (5 * $grid-block-sm);
 }
 
 .half-opacity{
-  background: $black-half-opacity;
-  opacity: .45;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background: $black;
+  opacity: .5;
 }

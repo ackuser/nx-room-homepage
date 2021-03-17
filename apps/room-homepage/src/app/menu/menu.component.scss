@@ -1,0 +1,29 @@
+@import '_colors';
+@import '_grid';
+@import '_fonts';
+
+%fx {
+    display: flex;
+    justify-content: space-between;
+}
+
+:host {
+    @extend %fx;
+    width: 100%;
+    height: 110px;
+    align-items: center;
+    z-index: 11;
+    position: absolute;
+    background: $white;
+    
+    .close {
+        margin-left: $grid-cell-sm;
+    }
+
+    .menu {
+        @include menu;
+        @extend %fx;
+        width: 243px;
+        margin-right: $grid-cell-sm;
+    }
+}

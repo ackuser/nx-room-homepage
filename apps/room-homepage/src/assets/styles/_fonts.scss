@@ -19,3 +19,9 @@
     font-weight: normal;
     text-align: left;
 }
+
+@mixin menu {
+    color: $black;
+    font-weight: 600;
+    text-align: center;
+}

@@ -1,40 +1,39 @@
-<div [ngClass]="{'half-opacity': isMenuActive}">
-  <div class="block block--1">
-    <img class="img img--burguer" src="../../assets/images/icon-hamburger.svg" alt="IconBurguer"
-      (click)="toogleMenu()" />
-    <img class="img img--logo" src="../../assets/images/logo.svg" alt="Logo" />
-    <img class="img img--1" [src]="'../../assets/images/mobile-image-hero-'+currentIndex+'.jpg'" alt="MbImageHero1" />
-    <div class="block block--arrows">
-      <room-homepage-arrow type="left" class="arrow arrow--left" (OnClickEvent)="changeImage($event)">
-      </room-homepage-arrow>
-      <room-homepage-arrow type="right" class="arrow arrow--right" (OnClickEvent)="changeImage($event)">
-      </room-homepage-arrow>
-    </div>
+<room-homepage-menu *ngIf="isMenuActive" (OnClickEvent)="toogleMenu()"></room-homepage-menu>
+<div [ngClass]="{'half-opacity': isMenuActive}"></div>
+<div class="block block--1">
+  <img class="img img--burguer" src="../../assets/images/icon-hamburger.svg" alt="IconBurguer" (click)="toogleMenu()" />
+  <img class="img img--logo" src="../../assets/images/logo.svg" alt="Logo" />
+  <img class="img img--1" [src]="'../../assets/images/mobile-image-hero-'+currentIndex+'.jpg'" alt="MbImageHero1" />
+  <div class="block block--arrows">
+    <room-homepage-arrow type="left" class="arrow arrow--left" (OnClickEvent)="changeImage($event)">
+    </room-homepage-arrow>
+    <room-homepage-arrow type="right" class="arrow arrow--right" (OnClickEvent)="changeImage($event)">
+    </room-homepage-arrow>
   </div>
-  <div class="block block--2">
-    <p class="title">
-      Discover innovative ways to decorate
-    </p>
-    <p class="info info--1">
-      We provide unmatched quality, comfort, and style for property owners across the country.
-      Our experts combine form and function in bringing &nbsp; your vision to life. Create a room in your
-      own style &nbsp;&nbsp;&nbsp; with our collection and make your property a reflection of you and what you love.
-    </p>
-    <p class="cta">
-      SHOP NOW <img class="img img--arrow" src="../../assets/images/arrow.svg" alt="Arrow" />
-    </p>
-  </div>
-  <img class="img img--2" src="../../assets/images/image-about-dark.jpg" alt="MbDark2" />
-  <div class="block block--3">
-    <p class="subtitle">
-      ABOUT OUR FURNITURE
-    </p>
-    <p class="info">
-      Our multifunctional collection blends design and function to suit your individual taste.
-      Make each room unique, or pick a cohesive theme that best express your interests and what
-      inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-      or anything in between. Product specialists are available to help you &nbsp; create your dream space.
-    </p>
-  </div>
-  <img class="img img--3" src="../../assets/images/image-about-light.jpg" alt="MbLight3" />
 </div>
+<div class="block block--2">
+  <p class="title">
+    Discover innovative ways to decorate
+  </p>
+  <p class="info info--1">
+    We provide unmatched quality, comfort, and style for property owners across the country.
+    Our experts combine form and function in bringing &nbsp; your vision to life. Create a room in your
+    own style &nbsp;&nbsp;&nbsp; with our collection and make your property a reflection of you and what you love.
+  </p>
+  <p class="cta">
+    SHOP NOW <img class="img img--arrow" src="../../assets/images/arrow.svg" alt="Arrow" />
+  </p>
+</div>
+<img class="img img--2" src="../../assets/images/image-about-dark.jpg" alt="MbDark2" />
+<div class="block block--3">
+  <p class="subtitle">
+    ABOUT OUR FURNITURE
+  </p>
+  <p class="info">
+    Our multifunctional collection blends design and function to suit your individual taste.
+    Make each room unique, or pick a cohesive theme that best express your interests and what
+    inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+    or anything in between. Product specialists are available to help you &nbsp; create your dream space.
+  </p>
+</div>
+<img class="img img--3" src="../../assets/images/image-about-light.jpg" alt="MbLight3" />
