@@ -17,13 +17,13 @@
     background: $white;
     
     .close {
-        margin-left: $grid-cell-sm;
+        margin-left: $grid-cell;
     }
 
     .menu {
         @include menu;
         @extend %fx;
         width: 243px;
-        margin-right: $grid-cell-sm;
+        margin-right: $grid-cell;
     }
 }

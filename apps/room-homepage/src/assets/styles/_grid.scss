@@ -1,5 +1,16 @@
 // Grid System in Small Devices
-$grid-cell-sm: 25px;
-$grid-block-sm: 3 * $grid-cell-sm;
-@debug $grid-cell-sm;
-@debug $grid-block-sm;
+$grid-cell: 25px;
+$grid-block: 3 * $grid-cell;
+
+// Grid System in Large Devices
+$grid-cell-lg: 16px;
+$grid-block-lg: 10 * $grid-cell-lg;
+
+// Not working overwritting variables with media quieries
+// @media screen and (min-width: 1024px) {}
+
+@debug $grid-cell;
+@debug $grid-block;
+
+@debug $grid-cell-lg;
+@debug $grid-block-lg;

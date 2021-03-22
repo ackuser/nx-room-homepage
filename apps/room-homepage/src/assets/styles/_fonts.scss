@@ -5,6 +5,11 @@
     color: $black;
     font-weight: bold;
     text-align: left;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 40;
+        font-weight: 600;
+    }
 }
 
 @mixin subtitle($size: 12px) {

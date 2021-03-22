@@ -3,10 +3,17 @@ $total-width: 375px;
 $number-of-columns: 12;
 $layout-column-width: 24px;
 $layout-gutter-width: 7px;
+
+$layout-column-width-lg: 94px;
+$layout-gutter-width-lg: 28px;
+
+@media screen and (min-width: 1024px) {
+}
+
+
 $total-width-no-gutter-outside: $number-of-columns * ($layout-column-width + $layout-gutter-width);
 $gutter-outside: $total-width - $total-width-no-gutter-outside;
 $each-gutter-outside: $gutter-outside / 2;
 @debug $total-width-no-gutter-outside;
 @debug $gutter-outside;
 @debug $each-gutter-outside;
-

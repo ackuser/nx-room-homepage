@@ -3,8 +3,10 @@
 @import '_layout';
 @import '_fonts';
 
-$grid-second-row: (266px + ($grid-block-sm * 2));
-$grid-fourth-row: (5 * $grid-block-sm);
+$grid-second-row: (266px + ($grid-block * 2));
+$grid-fourth-row: (5 * $grid-block);
+
+
 @debug $grid-second-row;
 @debug $grid-fourth-row;
 
@@ -12,6 +14,18 @@ $grid-fourth-row: (5 * $grid-block-sm);
   height: 100%;
   display: grid;
   grid-template-areas: 'area-1''area-2''area-3''area-4''area-5';
+
+  @media screen and (min-width: 1024px) {
+    $column-width: $layout-column-width-lg;
+    column-gap: $layout-gutter-width-lg;
+    @debug $column-width;
+
+    grid-template-columns: repeat(12, $column-width);
+    grid-template-rows: 534px 266px;
+    grid-template-areas:
+      "area-1 area-1 area-1 area-1 area-1 area-1 area-1 area-2 area-2 area-2 area-2 area-2"
+      "area-3 area-3 area-3 area-3 area-4 area-4 area-4 area-4 area-5 area-5 area-5 area-5";
+  }
 }
 
 .block {
@@ -21,20 +35,38 @@ $grid-fourth-row: (5 * $grid-block-sm);
     height: 360px;
     grid-area: area-1;
     margin: 0;
+
+    @media screen and (min-width: 1024px) {
+      width: 840px;
+      height: 534px;
+    }
   }
 
   &--2 {
     width: 311px;
     height: 266px;
     grid-area: area-2;
-    margin: $grid-block-sm ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
+    margin: $grid-block ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
+
+    @media screen and (min-width: 1024px) {
+      width: 600px;
+      height: 534px;
+    }
   }
 
   &--3 {
     width: 311px;
     height: 198px;
     grid-area: area-4;
-    margin: $grid-block-sm ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
+    margin: $grid-block ($each-gutter-outside + $layout-column-width + $layout-gutter-width);
+
+    @media screen and (min-width: 1024px) {
+      // margin: (4 * $grid-cell-lg) (3 * $grid-cell-lg) auto -$layout-gutter-width-lg;
+      margin-left: -$layout-gutter-width-lg;
+      margin-right: (3 * $grid-cell-lg);
+      width: 580px;
+      height: 266px;
+    }
   }
 
   &--arrows {
@@ -42,13 +74,26 @@ $grid-fourth-row: (5 * $grid-block-sm);
     display: flex;
     bottom: 0;
     right: 0;
-      
-      .arrow {
-        width: 56px;
-        height: 56px;
-        cursor: pointer;
+
+    @media screen and (min-width: 1024px) {
+      right: -160px;
+    }
+
+    .arrow {
+      width: 56px;
+      height: 56px;
+      cursor: pointer;
+
+      @media screen and (min-width: 1024px) {
+        width: 80px;
+        height: 80px;
+
+        &:hover {
+          opacity: .7;
+        }
       }
     }
+  }
 
 }
 
@@ -58,36 +103,55 @@ $grid-fourth-row: (5 * $grid-block-sm);
     position: absolute;
     left: 0;
     right: 0;
-    margin-top: $grid-cell-sm * 1.5;
+    margin-top: $grid-cell * 1.5;
     margin-left: auto;
     margin-right: auto;
   }
 
   &--burguer {
     position: absolute;
-    margin-top: $grid-cell-sm * 1.5;
-    margin-left: $grid-cell-sm * .9;
+    margin-top: $grid-cell * 1.5;
+    margin-left: $grid-cell * .9;
     width: auto;
     height: auto;
   }
 
   &--1 {
     height: 360px;
+
+    @media screen and (min-width: 1024px) {
+      width: 840px;
+      height: 534px;
+    }
   }
 
   &--2 {
     height: 238px;
     grid-area: area-3;
+
+    @media screen and (min-width: 1024px) {
+      width: 420px;
+      height: 266px;
+    }
   }
 
   &--3 {
     height: 227px;
     grid-area: area-5;
+
+    @media screen and (min-width: 1024px) {
+      width: 440px;
+      height: 266px;
+    }
   }
 }
 
 .title {
   @include title;
+
+  @media screen and (min-width: 1024px) {
+    width: 300px;
+  }
 }
 
 .subtitle {
@@ -101,12 +165,26 @@ $grid-fourth-row: (5 * $grid-block-sm);
 
   &--1 {
     margin-bottom: 0;
+
+    @media screen and (min-width: 1024px) {
+      width: 400px;
+      height: 100px;
+      line-height: 20px;
+    }
+  }
+
+  &--2 {
+    @media screen and (min-width: 1024px) {
+      width: 484px;
+      height: 104px;
+      line-height: 20px;
+    }
   }
 }
 
 .cta {
   letter-spacing: 10px;
-  margin-top: 2 * $grid-cell-sm;
+  margin-top: 2 * $grid-cell;
   cursor: pointer;
 
   &:hover {
@@ -124,7 +202,7 @@ $grid-fourth-row: (5 * $grid-block-sm);
   }
 }
 
-.half-opacity{
+.half-opacity {
   width: 100%;
   height: 100%;
   position: absolute;
