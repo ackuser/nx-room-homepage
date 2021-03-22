@@ -15,7 +15,11 @@
     z-index: 11;
     position: absolute;
     background: $white;
-    
+
+    @media screen and (min-width: 1024px) {
+        background: none;
+    }
+
     .close {
         margin-left: $grid-cell;
     }
@@ -25,5 +29,31 @@
         @extend %fx;
         width: 243px;
         margin-right: $grid-cell;
+
+        @media screen and (min-width: 1024px) {
+            height: 30px;
+            margin-top: 3 * $grid-cell-lg;
+            margin-left: $grid-block-lg;
+        }
+    }
+
+    .item {
+        @media screen and (min-width: 1024px) {
+            cursor: pointer;
+
+            // &:hover {
+            //     border-bottom: 2px solid $white;
+            //     padding-bottom: 10px;
+            // }
+
+            &:hover:after {
+                content: "";
+                display: block;
+                margin: 0 auto;
+                width: 50%;
+                border-bottom: 2px solid $white;
+                padding-top: 10px;
+            }
+        }
     }
 }

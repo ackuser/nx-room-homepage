@@ -1,7 +1,7 @@
-<img class="close" src="../../assets/images/icon-close.svg" alt="Close" (click)="onClick()" />
+<img *ngIf="isMobile" class="close" src="../../assets/images/icon-close.svg" alt="Close" (click)="onClick()" />
 <div class="menu">
-    <span>home</span>
-    <span>shop</span>
-    <span>about</span>
-    <span>contact</span>
+    <span class="item">home</span>
+    <span class="item">shop</span>
+    <span class="item">about</span>
+    <span class="item">contact</span>
 </div>

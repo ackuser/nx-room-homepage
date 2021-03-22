@@ -13,10 +13,13 @@ export class AppComponent {
 
   isMenuActive = false;
 
+  isMobile;
+
   device;
 
   constructor(private responsiveService: ResponsiveService) {
     this.device = this.responsiveService.checkWidth() === 'mobile' ? 'mobile' : 'desktop';
+    this.isMobile = this.device === 'mobile';
   }
 
   changeImage(value: string) {
