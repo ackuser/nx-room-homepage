@@ -1,3 +1,4 @@
+import { ResponsiveService } from './responsive.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,6 +13,12 @@ export class AppComponent {
 
   isMenuActive = false;
 
+  device;
+
+  constructor(private responsiveService: ResponsiveService) {
+    this.device = this.responsiveService.checkWidth() === 'mobile' ? 'mobile' : 'desktop';
+  }
+
   changeImage(value: string) {
     if (value === 'left') {
       if (this.currentIndex > 1) {
@@ -25,7 +32,7 @@ export class AppComponent {
     }
   }
 
-  toogleMenu(){
+  toogleMenu() {
     this.isMenuActive = !this.isMenuActive;
   }
 

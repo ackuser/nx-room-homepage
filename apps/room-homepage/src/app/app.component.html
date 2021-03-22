@@ -3,7 +3,7 @@
 <div class="block block--1">
   <img class="img img--burguer" src="../../assets/images/icon-hamburger.svg" alt="IconBurguer" (click)="toogleMenu()" />
   <img class="img img--logo" src="../../assets/images/logo.svg" alt="Logo" />
-  <img class="img img--1" [src]="'../../assets/images/mobile-image-hero-'+currentIndex+'.jpg'" alt="MbImageHero1" />
+  <img class="img img--1" [src]="'../../assets/images/' + device + '-image-hero-' + currentIndex + '.jpg'" alt="ImageHero1" />
   <div class="block block--arrows">
     <room-homepage-arrow type="left" class="arrow arrow--left" (OnClickEvent)="changeImage($event)">
     </room-homepage-arrow>
@@ -24,16 +24,16 @@
     SHOP NOW <img class="img img--arrow" src="../../assets/images/arrow.svg" alt="Arrow" />
   </p>
 </div>
-<img class="img img--2" src="../../assets/images/image-about-dark.jpg" alt="MbDark2" />
+<img class="img img--2" src="../../assets/images/image-about-dark.jpg" alt="Dark2" />
 <div class="block block--3">
   <p class="subtitle">
     ABOUT OUR FURNITURE
   </p>
-  <p class="info">
+  <p class="info info--2">
     Our multifunctional collection blends design and function to suit your individual taste.
     Make each room unique, or pick a cohesive theme that best express your interests and what
     inspires you. Find the furniture pieces you need, from traditional to contemporary styles
     or anything in between. Product specialists are available to help you &nbsp; create your dream space.
   </p>
 </div>
-<img class="img img--3" src="../../assets/images/image-about-light.jpg" alt="MbLight3" />
+<img class="img img--3" src="../../assets/images/image-about-light.jpg" alt="Light3" />
