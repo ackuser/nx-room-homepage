@@ -150,18 +150,21 @@ $grid-fourth-row: (5 * $grid-block);
   @include title;
 
   @media screen and (min-width: 1024px) {
-    width: 300px;
+    width: 400px;
+    margin-bottom: 2 * $grid-cell-lg;
   }
 }
 
 .subtitle {
   @include subtitle;
-  letter-spacing: 5px;
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 0;
+  }
 }
 
 .info {
   @include info;
-  letter-spacing: -0.25px;
 
   &--1 {
     margin-bottom: 0;
@@ -169,7 +172,7 @@ $grid-fourth-row: (5 * $grid-block);
     @media screen and (min-width: 1024px) {
       width: 400px;
       height: 100px;
-      line-height: 20px;
+      margin-top: 0;
     }
   }
 
@@ -177,7 +180,7 @@ $grid-fourth-row: (5 * $grid-block);
     @media screen and (min-width: 1024px) {
       width: 484px;
       height: 104px;
-      line-height: 20px;
+      margin-bottom: 0;
     }
   }
 }
@@ -189,6 +192,10 @@ $grid-fourth-row: (5 * $grid-block);
 
   &:hover {
     animation: moving 1s ease-in-out 4 alternate;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 1.5 * $grid-cell-lg;
   }
 }
 
