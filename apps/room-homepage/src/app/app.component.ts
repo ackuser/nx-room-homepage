@@ -18,7 +18,7 @@ export class AppComponent {
   device;
 
   constructor(private responsiveService: ResponsiveService) {
-    this.device = this.responsiveService.checkWidth() === 'mobile' ? 'mobile' : 'desktop';
+    this.device = this.responsiveService.checkWidth() === 'sm' ? 'mobile' : 'desktop';
     this.isMobile = this.device === 'mobile';
   }
 

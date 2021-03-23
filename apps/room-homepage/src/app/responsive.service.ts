@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ResponsiveService {
 
-  private readonly isMobile = new BehaviorSubject(false);
+    private readonly isMobile = new BehaviorSubject(false);
+    
     public screenWidth: string;
-
 
     /**
      * Creates an instance of responsive service.
